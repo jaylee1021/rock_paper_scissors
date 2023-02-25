@@ -1,0 +1,95 @@
+header {
+    text-align: center;
+    background-color: pink;
+    padding-top: 1px;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 70px;
+    padding: 0px 0px 30px 0px;
+}
+
+ul {
+    padding: 10px;
+    background: black;
+}
+
+li {
+
+    display: inline;
+    padding: 0px 20px 0px 20px;
+}
+
+a {
+    color: white;
+}
+
+body {
+    text-align: center;
+    background-color: green;
+    background-image: url("V2XC7rG.jpg");
+}
+
+#lapis-button {
+    padding: 15px 51px 15px 51px;
+    border-radius: 30px;
+    margin: 0 15px 0 0;
+    font-size: 30px;
+    font-family: "Pacifico", cursive;
+    background-color: gold;
+}
+
+#papyrus-button {
+    padding: 15px 30px 15px 30px;
+    border-radius: 30px;
+    margin: 0 15px 0 15px;
+    font-size: 30px;
+    font-family: "Pacifico", cursive;
+    background-color: gold;
+}
+
+#scalpellus-button {
+    padding: 15px 15px 15px 15px;
+    border-radius: 30px;
+    margin: 0 0 0 15px;
+    font-size: 30px;
+    font-family: "Pacifico", cursive;
+    background-color: gold;
+}
+
+#final-result-button,
+#reset-button {
+    color: black;
+    border-radius: 15px;
+    font-size: 20px;
+    background-color: teal;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 290px 0px 50px 0px;
+    text-decoration: underline;
+}
+
+div {
+    border-radius: 30px;
+    margin: auto;
+    background-color: white;
+    width: 800px;
+}
+
+p,
+h2 {
+    font-size: 20px;
+}
+
+img {
+    padding: 10px;
+}
+
+span {
+    background-color: blue;
+    font-weight: bold;
+    color: white;
+}
