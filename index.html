@@ -26,19 +26,32 @@
 
     <div>
         <h3>Please click one of the three buttons to play the game!</h3>
+        <p id="score-keep">You: <span id='player-win-count'> 0 </span></p>
+        <p id="score-keep">Computer: <span id='player-lose-count'> 0 </span></p>
+        <p id="score-keep">Tie: <span id='player-tie-count'> 0 </span></p>
+        <div class="button-text-right">
+            <button id='reset-button' type="button">Reset</button>
+        </div>
+
         <img id="rock" src="/rock_paper_scissors/images/rock.png" />
         <img id="paper" src="/rock_paper_scissors/images/paper.png" />
         <img id="scissors" src="/rock_paper_scissors/images/scissors.png" />
         <h2>
-            <span id='result'></span>
+            <p id="player-choice-text">You: <span id="player-choice"> </span> </p>
+            <p id="computer-choice-text">Computer: <span id="computer-choice"></span></p>
+            <p id='result'></p>
         </h2>
+        <p id='result2'><strong></strong></p>
+        <div>
+            <p id="box">?</p>
+        </div>
         <p><span id='gameCount'> </span></p>
         <p><span id='player-win'> </span></p>
         <p><span id='player-lose'> </span></p>
         <p><span id='player-tie'> </span></p>
 
-        <button id='final-result-button' type="button">View Final Result</button>
-        <button id='reset-button' type="button">Reset</button>
+        <!-- <button id='final-result-button' type="button">View Final Result</button> -->
+
     </div>
     <script src="rps.js"></script>
 </body>

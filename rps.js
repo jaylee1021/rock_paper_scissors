@@ -8,75 +8,86 @@ let playerWinCount = 0;
 let playerLoseCount = 0;
 let totalCount = 0;
 
+
 // compares computer choice with player choice
 function compareChoices(computer, player) {
     let output = "";
 
     if (computer === player) {
         output =
-            "--It's a tie! Both the computer and the player chose " + computer + "!--";
+            "It's a tie! Both the computer and the player chose " + computer;
         playerTieCount = playerTieCount + 1;
+        document.getElementById("box").innerText = "It's a Tie!";
+        document.getElementById("box").style.backgroundColor = "Yellow";
     } else if (computer === choices[0]) {
         if (player === choices[1]) {
             output =
-                "--The player wins! The computer chose " +
+                "The player wins! The computer chose " +
                 computer +
                 " and the player chose " +
-                player +
-                "--";
+                player;
             playerWinCount = playerWinCount + 1;
+            document.getElementById("box").innerText = "You Win!";
+            document.getElementById("box").style.backgroundColor = "Green";
         } else if (player === choices[2]) {
             output =
-                "--The computer wins! The computer chose " +
+                "The computer wins! The computer chose " +
                 computer +
                 " and the player chose " +
-                player +
-                "--";
+                player;
             playerLoseCount = playerLoseCount + 1;
+            document.getElementById("box").innerText = "You Lose!";
+            document.getElementById("box").style.backgroundColor = "Red";
         }
     } else if (computer === choices[1]) {
         if (player === choices[0]) {
             output =
-                "--The computer wins! The computer chose " +
+                "The computer wins! The computer chose " +
                 computer +
                 " and the player chose " +
-                player +
-                "--";
+                player;
             playerLoseCount = playerLoseCount + 1;
+            document.getElementById("box").innerText = "You Lose!";
+            document.getElementById("box").style.backgroundColor = "Red";
         } else if (player === choices[2]) {
             output =
-                "--The player wins! The computer chose " +
+                "The player wins! The computer chose " +
                 computer +
                 " and the player chose " +
-                player +
-                "--";
+                player;
             playerWinCount = playerWinCount + 1;
+            document.ggetElementById("box").innerText = "You Win!";
+            document.getElementById("box").style.backgroundColor = "Green";
         }
     } else if (computer === choices[2]) {
         if (player === choices[0]) {
+
             output =
-                "--The player wins! The computer chose " +
+                "The player wins! The computer chose " +
                 computer +
                 " and the player chose " +
-                player +
-                "--";
+                player;
             playerWinCount = playerWinCount + 1;
+            document.getElementById("box").innerText = "You Win!";
+            document.getElementById("box").style.backgroundColor = "Green";
+
         } else if (player === choices[1]) {
             output =
-                "--The computer wins! The computer chose " +
+                "The computer wins! The computer chose " +
                 computer +
                 " and the player chose " +
-                player +
-                "--";
+                player;
             playerLoseCount = playerLoseCount + 1;
+            document.getElementById("box").innerText = "You Lose!";
+            document.getElementById("box").style.backgroundColor = "Red";
         }
     }
     // add tie, win, and lose counts to get total game played
     totalCount = playerTieCount + playerWinCount + playerLoseCount;
 
     // outputs how many games played so far
-    document.getElementById("gameCount").innerHTML =
-        "You've played " + totalCount + " games so far";
+    // document.getElementById("gameCount").innerHTML =
+    //     "You've played " + totalCount + " games so far";
     return output;
 }
 
@@ -104,7 +115,13 @@ function printResult() {
     // compares between computerChoice and playerChoice by using function compareChoices
     const compare = compareChoices(computer.computerChoice, player.playerChoice);
     // outputs results from above line
-    document.getElementById("result").innerText = compare;
+    document.getElementById("result").innerText = "";
+    document.getElementById("player-win-count").innerText = playerWinCount;
+    document.getElementById("player-lose-count").innerText = playerLoseCount;
+    document.getElementById("player-tie-count").innerText = playerTieCount;
+    document.getElementById("player-choice").innerText = player.playerChoice;
+    document.getElementById("computer-choice").innerText = computer.computerChoice;
+
 }
 
 // choices for computer to choose from
@@ -132,18 +149,6 @@ document
 document
     .getElementById("scissors")
     .addEventListener("click", buttonScalpellus);
-// when "View Final Result" button is clicked, win count, lose count, and tie count appears
-document
-    .getElementById("final-result-button")
-    .addEventListener("click", function () {
-        document.getElementById("player-win").innerText =
-            "..You've won " + playerWinCount + " time(s)..";
-        document.getElementById("player-lose").innerText =
-            "..You've lost " + playerLoseCount + " time(s)..";
-        document.getElementById("player-tie").innerText =
-            "..You've tied " + playerTieCount + " time(s)..";
-    });
-
 // When "Reset" button is clicked, counts go to 0 and result disappears
 document.getElementById("reset-button").addEventListener("click", function () {
     document.getElementById("result").innerText = "";
@@ -155,4 +160,28 @@ document.getElementById("reset-button").addEventListener("click", function () {
     document.getElementById("player-lose").innerHTML = "";
     document.getElementById("player-tie").innerHTML = "";
     document.getElementById("gameCount").innerHTML = "";
+    document.getElementById("player-win-count").innerHTML = "0";
+    document.getElementById("player-lose-count").innerHTML = "0";
+    document.getElementById("player-tie-count").innerHTML = "0";
+    document.getElementById("player-choice").innerText = "";
+    document.getElementById("computer-choice").innerText = "";
+    document.getElementById("result2").innerText = "";
+    document.getElementById("box").innerText = "?";
+    document.getElementById("box").style.backgroundColor = "White";
 });
+
+// when "View Final Result" button is clicked, win count, lose count, and tie count appears
+document
+    .getElementById("final-result-button")
+    .addEventListener("click", function () {
+        document.getElementById("player-win").innerText =
+            "You've won " + playerWinCount + " time(s)";
+        document.getElementById("player-lose").innerText =
+            "You've lost " + playerLoseCount + " time(s)";
+        document.getElementById("player-tie").innerText =
+            "You've tied " + playerTieCount + " time(s)";
+    });
+
+
+
+
