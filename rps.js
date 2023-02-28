@@ -11,7 +11,6 @@ let totalCount = 0;
 
 // compares computer choice with player choice
 function compareChoices(computer, player) {
-    let output = "";
 
     if (computer === player) {
         playerTieCount = playerTieCount + 1;
@@ -51,11 +50,6 @@ function compareChoices(computer, player) {
     }
     // add tie, win, and lose counts to get total game played
     totalCount = playerTieCount + playerWinCount + playerLoseCount;
-
-    // outputs how many games played so far
-    // document.getElementById("gameCount").innerHTML =
-    //     "You've played " + totalCount + " games so far";
-    return output;
 }
 
 // when Lapis button is clicked, sets playerChoice to Lapis
@@ -113,9 +107,11 @@ document
     .addEventListener("click", buttonPapyrus);
 
 // when scalpellus button is clicked, function buttonScalpellus runs
-document
-    .getElementById("scissors")
-    .addEventListener("click", buttonScalpellus);
+// document
+//     .getElementById("scissors")
+//     .addEventListener("click", buttonScalpellus);
+
+document.getElementById("scissors").onclick = function () { buttonPapyrus() };
 
 // When "Reset" button is clicked, counts go to 0 and result disappears
 document.getElementById("reset-button").addEventListener("click", function () {
@@ -124,10 +120,6 @@ document.getElementById("reset-button").addEventListener("click", function () {
     playerWinCount = 0;
     playerLoseCount = 0;
     totalCount = 0;
-    document.getElementById("player-win").innerHTML = "";
-    document.getElementById("player-lose").innerHTML = "";
-    document.getElementById("player-tie").innerHTML = "";
-    document.getElementById("gameCount").innerHTML = "";
     document.getElementById("player-win-count").innerHTML = "0";
     document.getElementById("player-lose-count").innerHTML = "0";
     document.getElementById("player-tie-count").innerHTML = "0";
@@ -137,19 +129,3 @@ document.getElementById("reset-button").addEventListener("click", function () {
     document.getElementById("box").innerText = "?";
     document.getElementById("box").style.backgroundColor = "White";
 });
-
-// when "View Final Result" button is clicked, win count, lose count, and tie count appears
-document
-    .getElementById("final-result-button")
-    .addEventListener("click", function () {
-        document.getElementById("player-win").innerText =
-            "You've won " + playerWinCount + " time(s)";
-        document.getElementById("player-lose").innerText =
-            "You've lost " + playerLoseCount + " time(s)";
-        document.getElementById("player-tie").innerText =
-            "You've tied " + playerTieCount + " time(s)";
-    });
-
-
-
-

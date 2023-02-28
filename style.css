@@ -71,9 +71,9 @@ body {
 #reset-button {
     margin: 10px 15px 0px 0px;
     color: black;
-    border-radius: 15px;
+    border-radius: 5px;
     font-size: 20px;
-    background-color: teal;
+    background-color: yellowgreen;
 }
 
 h3 {
