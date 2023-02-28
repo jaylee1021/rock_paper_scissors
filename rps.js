@@ -14,69 +14,36 @@ function compareChoices(computer, player) {
     let output = "";
 
     if (computer === player) {
-        output =
-            "It's a tie! Both the computer and the player chose " + computer;
         playerTieCount = playerTieCount + 1;
         document.getElementById("box").innerText = "It's a Tie!";
         document.getElementById("box").style.backgroundColor = "Yellow";
     } else if (computer === choices[0]) {
         if (player === choices[1]) {
-            output =
-                "The player wins! The computer chose " +
-                computer +
-                " and the player chose " +
-                player;
             playerWinCount = playerWinCount + 1;
             document.getElementById("box").innerText = "You Win!";
             document.getElementById("box").style.backgroundColor = "Green";
         } else if (player === choices[2]) {
-            output =
-                "The computer wins! The computer chose " +
-                computer +
-                " and the player chose " +
-                player;
             playerLoseCount = playerLoseCount + 1;
             document.getElementById("box").innerText = "You Lose!";
             document.getElementById("box").style.backgroundColor = "Red";
         }
     } else if (computer === choices[1]) {
         if (player === choices[0]) {
-            output =
-                "The computer wins! The computer chose " +
-                computer +
-                " and the player chose " +
-                player;
             playerLoseCount = playerLoseCount + 1;
             document.getElementById("box").innerText = "You Lose!";
             document.getElementById("box").style.backgroundColor = "Red";
         } else if (player === choices[2]) {
-            output =
-                "The player wins! The computer chose " +
-                computer +
-                " and the player chose " +
-                player;
             playerWinCount = playerWinCount + 1;
             document.ggetElementById("box").innerText = "You Win!";
             document.getElementById("box").style.backgroundColor = "Green";
         }
     } else if (computer === choices[2]) {
         if (player === choices[0]) {
-
-            output =
-                "The player wins! The computer chose " +
-                computer +
-                " and the player chose " +
-                player;
             playerWinCount = playerWinCount + 1;
             document.getElementById("box").innerText = "You Win!";
             document.getElementById("box").style.backgroundColor = "Green";
 
         } else if (player === choices[1]) {
-            output =
-                "The computer wins! The computer chose " +
-                computer +
-                " and the player chose " +
-                player;
             playerLoseCount = playerLoseCount + 1;
             document.getElementById("box").innerText = "You Lose!";
             document.getElementById("box").style.backgroundColor = "Red";
@@ -93,18 +60,18 @@ function compareChoices(computer, player) {
 
 // when Lapis button is clicked, sets playerChoice to Lapis
 function buttonLapis() {
-    player.playerChoice = "Lapis";
+    player.playerChoice = "Rock";
     printResult();
 }
 
 // when Papyrys button is clicked, sets playerChoice to Papyrus
 function buttonPapyrus() {
-    player.playerChoice = "Papyrus";
+    player.playerChoice = "Paper";
     printResult();
 }
 // when Scalpellus button is clicked, sets playerChoice to Scalpellus
 function buttonScalpellus() {
-    player.playerChoice = "Scalpellus";
+    player.playerChoice = "Scissors";
     printResult();
 }
 
@@ -113,7 +80,7 @@ function printResult() {
     // picks one choice from choices array randomly by using function computerChooses
     computer.computerChoice = choices[computerChooses()];
     // compares between computerChoice and playerChoice by using function compareChoices
-    const compare = compareChoices(computer.computerChoice, player.playerChoice);
+    compareChoices(computer.computerChoice, player.playerChoice);
     // outputs results from above line
     document.getElementById("result").innerText = "";
     document.getElementById("player-win-count").innerText = playerWinCount;
@@ -125,7 +92,7 @@ function printResult() {
 }
 
 // choices for computer to choose from
-const choices = ["Lapis", "Papyrus", "Scalpellus"];
+const choices = ["Rock", "Paper", "Scissors"];
 
 // computer's initial value
 const computer = {
@@ -149,6 +116,7 @@ document
 document
     .getElementById("scissors")
     .addEventListener("click", buttonScalpellus);
+
 // When "Reset" button is clicked, counts go to 0 and result disappears
 document.getElementById("reset-button").addEventListener("click", function () {
     document.getElementById("result").innerText = "";
